@@ -4,10 +4,9 @@
 //
 //  Created by Julia Eileen Schäfer on 18/11/22.
 //
-
 import UIKit
 
-class ViewController: UIViewController {
+class PokedexViewController: UIViewController {
     @IBOutlet weak var pokemonsTableView: UITableView!
     var pokedex : Pokedex?
     
@@ -17,11 +16,10 @@ class ViewController: UIViewController {
         pokemonsTableView.delegate = self
         pokemonsTableView.dataSource = self
         pokedex = PokedexConfig.config(path: "pokedex")
-       // print(pokedex)
     }
 }
 
-extension ViewController : UITableViewDataSource{
+extension PokedexViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (pokedex?.pokemons.count)!
     }
@@ -34,7 +32,7 @@ extension ViewController : UITableViewDataSource{
     }
 }
 
-extension ViewController : UITableViewDelegate{
+extension PokedexViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let pokemonStoryboard: UIStoryboard = UIStoryboard(name: "PokemonScreen", bundle: nil)
@@ -42,10 +40,7 @@ extension ViewController : UITableViewDelegate{
         let pokemonViewController = pokemonStoryboard.instantiateViewController(withIdentifier: "pokemonView") as! PokemonViewController
         
         pokemonViewController.pokemon = pokedex?.pokemons[indexPath.row]
-        
-        print("Vim ate aqui")
-        //pokemonViewController.modalPresentationStyle = .overFullScreen
-        
+
         self.navigationController?.pushViewController(pokemonViewController, animated: true)
     }
 }
