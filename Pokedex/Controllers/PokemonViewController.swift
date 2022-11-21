@@ -36,7 +36,7 @@ class PokemonViewController: UIViewController {
     
     @IBAction func previusPokemonPressed(_ sender: UIButton) {
         pokemon = pokedex?.pokemons[pokemon!.id - 2]
-        nextPokemonButton.isHighlighted = false
+        previusPokemonButton.isHighlighted = false
         configLayout()
     }
     
