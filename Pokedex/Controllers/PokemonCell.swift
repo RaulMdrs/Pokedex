@@ -19,15 +19,10 @@ class PokemonCell: UITableViewCell {
     
     func config(pokemon : Pokemon){
         configCell()
-        
         namePokemonLabel.text! = pokemon.name.english
-        
         configTypeLabel(pokemon: pokemon)
-        
         configImage(pokemon: pokemon)
-        
     }
-    
     
     func configTypeLabel(pokemon : Pokemon){
         firstTypeLabel.layer.cornerRadius = 15.0

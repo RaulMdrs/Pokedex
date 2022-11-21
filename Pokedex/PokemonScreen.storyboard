@@ -286,6 +286,30 @@
                                     <constraint firstAttribute="width" secondItem="brc-cM-vHu" secondAttribute="height" multiplier="130:51" id="EUl-JO-4oi"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cd-BQ-Ego" userLabel="previusPokemon">
+                                <rect key="frame" x="0.0" y="210" width="76" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8cd-BQ-Ego" secondAttribute="height" multiplier="38:37" id="czM-CB-SJq"/>
+                                    <constraint firstAttribute="width" constant="76" id="kSI-gg-IzY"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="001"/>
+                                <connections>
+                                    <action selector="previusPokemonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="UUx-OO-487"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2I-C3-sTd" userLabel="nextPokemon">
+                                <rect key="frame" x="314" y="210" width="76" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="soF-rA-f1m"/>
+                                    <constraint firstAttribute="width" secondItem="g2I-C3-sTd" secondAttribute="height" multiplier="38:37" id="tzi-1O-8fc"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="001"/>
+                                <connections>
+                                    <action selector="nextPokemonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bSg-zp-dg0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -294,9 +318,13 @@
                             <constraint firstItem="OfO-sF-uOg" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="A5i-ja-IZY"/>
                             <constraint firstItem="h7O-Qy-lHR" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="GNJ-ii-by1"/>
                             <constraint firstAttribute="bottom" secondItem="h7O-Qy-lHR" secondAttribute="bottom" id="Gy2-Wq-Z2e"/>
+                            <constraint firstItem="8cd-BQ-Ego" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="210" id="HRT-hO-tq2"/>
                             <constraint firstItem="OfO-sF-uOg" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="MYU-XH-BsC"/>
                             <constraint firstItem="brc-cM-vHu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="QxO-gb-kRM"/>
                             <constraint firstItem="h7O-Qy-lHR" firstAttribute="top" secondItem="OfO-sF-uOg" secondAttribute="bottom" constant="-15" id="Wdu-rP-oue"/>
+                            <constraint firstItem="g2I-C3-sTd" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="210" id="Xbh-ih-8JA"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="g2I-C3-sTd" secondAttribute="trailing" id="XeE-ha-Bfw"/>
+                            <constraint firstItem="8cd-BQ-Ego" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="cjc-Sf-aQd"/>
                             <constraint firstAttribute="trailing" secondItem="h7O-Qy-lHR" secondAttribute="trailing" id="fSw-cT-ltO"/>
                             <constraint firstItem="brc-cM-vHu" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="h5Q-7I-YLW"/>
                             <constraint firstItem="OfO-sF-uOg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="t92-Ne-oIk"/>
@@ -308,7 +336,9 @@
                         <outlet property="defenseBaseLabel" destination="cxC-FQ-3B0" id="Xo7-Qh-AnR"/>
                         <outlet property="firstTypeLabel" destination="yBP-TU-vhD" id="UKz-8X-z34"/>
                         <outlet property="healthBaseLabel" destination="CeA-Vo-H6L" id="VsV-pg-xdV"/>
+                        <outlet property="nextPokemonButton" destination="g2I-C3-sTd" id="6JK-mJ-Tva"/>
                         <outlet property="pokemonImage" destination="brc-cM-vHu" id="DU2-rx-1V4"/>
+                        <outlet property="previusPokemonButton" destination="8cd-BQ-Ego" id="tSE-FP-W4L"/>
                         <outlet property="secondTypeLabel" destination="hRn-KA-LOk" id="giu-8r-wn0"/>
                         <outlet property="spAttackBaseLabel" destination="awX-us-S00" id="60G-bP-PpM"/>
                         <outlet property="spDefenseLabel" destination="xlj-Od-u2Z" id="TTD-Od-fBg"/>

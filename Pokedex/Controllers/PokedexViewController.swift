@@ -39,6 +39,7 @@ extension PokedexViewController : UITableViewDelegate{
         
         let pokemonViewController = pokemonStoryboard.instantiateViewController(withIdentifier: "pokemonView") as! PokemonViewController
         
+        pokemonViewController.pokedex = pokedex
         pokemonViewController.pokemon = pokedex?.pokemons[indexPath.row]
 
         self.navigationController?.pushViewController(pokemonViewController, animated: true)

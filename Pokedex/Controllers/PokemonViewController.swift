@@ -9,6 +9,7 @@ import UIKit
 
 class PokemonViewController: UIViewController {
     var pokemon : Pokemon? = nil
+    var pokedex : Pokedex? = nil
     
     @IBOutlet weak var statsView: UIView!
     @IBOutlet weak var backgroundView: UIView!
@@ -21,16 +22,33 @@ class PokemonViewController: UIViewController {
     @IBOutlet weak var speedBaseLabel: UILabel!
     @IBOutlet weak var secondTypeLabel: UILabel!
     @IBOutlet weak var firstTypeLabel: UILabel!
+    @IBOutlet weak var previusPokemonButton: UIButton!
+    @IBOutlet weak var nextPokemonButton: UIButton!
+    
+    
     override func viewDidLoad() {
         
         
         super.viewDidLoad()
-        self.title = pokemon!.name.english
+        configLayout()
+        
+    }
+    
+    @IBAction func previusPokemonPressed(_ sender: UIButton) {
+        pokemon = pokedex?.pokemons[pokemon!.id - 2]
+        nextPokemonButton.isHighlighted = false
         configLayout()
     }
     
+    @IBAction func nextPokemonPressed(_ sender: UIButton) {
+        print(pokemon!.id)
+        pokemon = pokedex?.pokemons[pokemon!.id]
+        nextPokemonButton.isHighlighted = false
+        configLayout()
+    }
     
     func configLayout(){
+        self.title = pokemon!.name.english
         
         configLabels(pokemon: pokemon!)
         
@@ -80,12 +98,23 @@ class PokemonViewController: UIViewController {
     
     func configImage()
     {
-        if pokemon!.id < 10{
-            pokemonImage.image = UIImage(named: "00\(pokemon!.id)")
-        }else if pokemon!.id < 100{
-            pokemonImage.image = UIImage(named: "0\(pokemon!.id)")
+        if pokemon!.id == 1{
+            pokemonImage.image = UIImage(named: (String(format: "%.3d", pokemon!.id)))
+            nextPokemonButton.imageView?.image = UIImage(named: (String(format: "%.3d", pokemon!.id + 1)))
+            previusPokemonButton.isHidden = true
+        }
+        else if pokemon!.id < 100{
+            previusPokemonButton.isHidden = false
+            nextPokemonButton.isHidden = false
+            
+            pokemonImage.image = UIImage(named: (String(format: "%.3d", pokemon!.id)))
+            previusPokemonButton.imageView?.image = UIImage(named: (String(format: "%.3d", pokemon!.id - 1)))
+            nextPokemonButton.imageView?.image = UIImage(named: (String(format: "%.3d", pokemon!.id + 1)))
+            
         }else{
-            pokemonImage.image = UIImage(named: "\(pokemon!.id)")
+            pokemonImage.image = UIImage(named: (String(format: "%.3d", pokemon!.id)))
+            previusPokemonButton.imageView?.image = UIImage(named: (String(format: "%.3d", pokemon!.id - 1)))
+            nextPokemonButton.isHidden = true
         }
     }
     
