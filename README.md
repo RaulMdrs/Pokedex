@@ -1,37 +1,8 @@
 #  Desafio Pokedex
 
-Desenvolva um app que apresenta as informações de stats dos pokemons.
+App desenvolvido para estudos, onde consumo uma API de pokemon para mostrar os pokemons ao usuário.
 
-<p align="center">
-    <img width="400px" height="auto" src="./primeira-tela.png" />
-</p>
+https://user-images.githubusercontent.com/40407770/226975905-4d1f5168-905b-422e-9d9e-8620622eee5e.mov
 
-<p align="center">
-    <img width="400px" height="auto" src="./segunda-tela.png" />
-</p>
-
-<p align="center">
-    <img width="400px" height="auto" src="./segunda-tela-vulpix.png" />
-</p>
-
-<p align="center">
-    <img width="400px" height="auto" src="./primeira-tela-dark.png" />
-</p>
-
-<p align="center">
-    <img width="400px" height="auto" src="./segunda-tela-dark.png" />
-</p>
-
-Dentro do diretório Data existe um json chamado `pokedex.json`, utilize os dados dele para preencher a lista de pokemons.
-
-As imagens dos pokemons estão nos assets, utilizem o `id` para referenciar a imagem.
-
-Dentro dos assets também existe a definição das cores dos tipos de pokemon e os ícones que vocês irão precisar.
-
-## Observações
-
-- A definição de layout é livre, podem fazer idêntico ou apenas usar de inspiração. O importante é que ao menos as informações e as cores exibidas nos prints estejam presentes.
-- A fonte utiliza foi `Helvetica`.
-- O Dark Mode é opcional, porém os assets providos já estão preparados, analisem eles para entender. 
-- **A ordem de execução das tarefas será dada no início da aula**
-- **Lembrem de usar MVC**
+<img width="353" alt="Captura de Tela 2023-03-22 às 13 41 11" src="https://user-images.githubusercontent.com/40407770/226976151-09ab280a-443b-4547-a0ae-68ed4c74c9ed.png">
+<img width="353" alt="Captura de Tela 2023-03-22 às 13 40 52" src="https://user-images.githubusercontent.com/40407770/226976164-1a68c89e-1c01-42c4-8762-d83d62694ddd.png">
